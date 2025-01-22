@@ -21,4 +21,8 @@ public class Cell {
         return element;
     }
 
+    @Override
+    public String toString() {
+        return "Cell[Next Element=" + element + ", next=" + next + "]";
+    }
 }
