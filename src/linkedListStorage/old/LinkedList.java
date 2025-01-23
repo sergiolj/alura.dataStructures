@@ -1,4 +1,4 @@
-package linkedListStorage;
+package linkedListStorage.old;
 
 public class LinkedList {
     private Cell head = null;
