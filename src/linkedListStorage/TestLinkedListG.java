@@ -10,26 +10,27 @@ public class TestLinkedListG {
         System.out.println(node1.toString());
 
         LinkedListG<String> list = new LinkedListG<>();
-        System.out.println(list.getCount());
+
+        System.out.println(list.getSize());
         list.add("Adrian");
-        System.out.println(list.getCount());
+        System.out.println(list.getSize());
         System.out.println(list);
         list.add("David");
         list.add("Mary");
         System.out.println(list);
+        list.add("John");
+        System.out.println(list);
+        list.add("John 2");
+        list.addAtBeginning("Adam");
+        System.out.println(list);
+        System.out.println(list.getNodeAt(2));
+        System.out.println("Position zero is a valid parameter? "+list.validNode(0));
 
-        list.add("Marcus");
-        System.out.println(list.getCount());
+        list.add("Bewolf",2);
         System.out.println(list);
-        list.addAtEnd("FarLeft");
-        System.out.println(list);
-        list.add("Alice");
-        System.out.println(list);
-        System.out.println(list.getCount());
-        System.out.println(list.getNodeAt(6));
-        list.add("Pussycat",5);
-        System.out.println(list);
-        list.contains("Pussycat");
-        System.out.println(list.getNodeAt(1));
+
+        System.out.println(list.getNodeAt(2).getElement());
+        System.out.println(list.contains("Bewolfer"));
+        System.out.println(list.contains("Mary"));
     }
 }
