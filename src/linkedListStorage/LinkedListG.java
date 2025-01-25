@@ -8,8 +8,8 @@ public class LinkedListG <T> {
      * it's just a reference to a node!
      * The tail's represents the newest node add in the sequence, the "next" attribute pointer from this node,
      * in this case, is null, this defines the final of the list.
-     * This Linked List grows normally from (first) head -> tail (end) from "creation nodes" point of view.
-     * To navigate through the list you must set the first element (head)
+     * This Linked List grows normally from (first - older) head -> tail (end - newer) from "creation nodes" point of view.
+     * To navigate through the list you must point out to the first element (head)
      */
     private Node<T> head;
     private Node<T> tail;
@@ -74,6 +74,37 @@ public class LinkedListG <T> {
         getNodeAt(position -1).setNext(newNode);
         count++;
     }
+
+    /**
+     * Remove an element from the list at the position specified by the user.
+     * - Validates that the given position is within the valid range of the list.
+     * - Display an informative message about the operation performed.
+     * - Checks if the given position corresponds to the first node in the list.
+     *      - Updates the head to point to the head next node.
+     *    -Checks if the given position corresponds to the last node in the list.
+     *      - Updates the node before the given position next node to null.
+     *      - Updates de tail to reference the node before the given position.
+     * - Otherwise:
+     *      - Updates the next pointer of the node before the given position to node after to skip over the removed node.
+     *
+     * @param position The position of the element to be removed from the list.
+     * Revised commentary
+     */
+    public void remove(int position) {
+        if(validNode(position)){
+            System.out.println("The element at position " + position + " has been removed from the list!");
+            if(getNodeAt(position).equals(this.head)){
+                this.head = this.head.getNext();
+            } else if(getNodeAt(position).equals(this.tail)) {
+                getNodeAt(position - 1).setNext(null);
+                this.tail = getNodeAt(position - 1);
+            }else{
+                getNodeAt(position -1).setNext(getNodeAt(position+1));
+            }
+        }
+    }
+
+
 
     /**
      * Checks whether a specific element exists in the list and returns a boolean result.
@@ -158,6 +189,22 @@ public class LinkedListG <T> {
         return this.count;
     }
 
+    /**
+     * Overrides the toString() method to display all node elements in the list.
+     * - Initializes a StringBuilder object with the class name as the starting value.
+     * - Sets a node pointer to reference the head of the list.
+     * - Validates that the current node isn't null, (ensuring the list is not empty).
+     *      - Appends the SB object with the element from the current node.
+     *      - Checks if the next node isn't null (last node of the list)
+     *          - Appends a comma and a space.
+     *          - Update the current node to the next in the list.
+     *      - When the current node is the last one (next == null)
+     *      - Append a closing bracket.
+     *  - Return the content of the StringBuilder object as a String.
+     *
+     * @return A String containing all the elements of the list.
+     * Revised commentary
+     */
     @Override
     public String toString() {
         StringBuilder str = new StringBuilder("LinkedListG [");
@@ -172,5 +219,4 @@ public class LinkedListG <T> {
         str.append("]");
         return str.toString();
     }
-
   }

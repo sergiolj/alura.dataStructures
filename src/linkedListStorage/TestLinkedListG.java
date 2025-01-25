@@ -32,5 +32,13 @@ public class TestLinkedListG {
         System.out.println(list.getNodeAt(2).getElement());
         System.out.println(list.contains("Bewolfer"));
         System.out.println(list.contains("Mary"));
+        System.out.println(list);
+        System.out.println(list.getSize());
+        list.remove(1);
+        System.out.println(list);
+        list.remove(6);
+        System.out.println(list);
+        list.remove(3);
+        System.out.println(list);
     }
 }
