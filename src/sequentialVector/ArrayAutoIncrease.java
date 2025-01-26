@@ -1,4 +1,4 @@
-package sequentialVectorStorage;
+package sequentialVector;
 
 import java.util.Arrays;
 

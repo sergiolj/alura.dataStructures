@@ -1,4 +1,4 @@
-package linkedListStorage.old;
+package linkedList.old;
 
 public class TestLinkedList {
     public static void main(String[] args) {

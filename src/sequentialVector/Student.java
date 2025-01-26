@@ -1,4 +1,4 @@
-package sequentialVectorStorage;
+package sequentialVector;
 
 public class Student {
     private String name;

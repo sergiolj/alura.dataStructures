@@ -1,4 +1,4 @@
-package linkedListStorage;
+package linkedList;
 
 public class TestLinkedListG {
     public static void main(String[] args) {

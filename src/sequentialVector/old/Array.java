@@ -1,12 +1,12 @@
-package sequentialVectorStorage.old;
+package sequentialVector.old;
 
-import sequentialVectorStorage.Student;
+import sequentialVector.Student;
 
 import java.util.Arrays;
 
 public class Array {
     private int arraySize = 4;
-    private Student[] students = new sequentialVectorStorage.Student[arraySize];
+    private Student[] students = new sequentialVector.Student[arraySize];
     private int index = 0; //first position empty
 
 
@@ -20,7 +20,7 @@ public class Array {
         }
     }*/
 
-    public void add(sequentialVectorStorage.Student student) {
+    public void add(sequentialVector.Student student) {
         if(isNotFull()) {
             this.students[index] = student;
             index++;
@@ -68,7 +68,7 @@ public class Array {
         }
     }
 
-    public sequentialVectorStorage.Student grab(int position) {
+    public sequentialVector.Student grab(int position) {
         if (validPosition(position)) {
             if (!emptyPosition(position)) {
                 return students[position];
@@ -95,7 +95,7 @@ public class Array {
         }
     }
 
-    public boolean exist(sequentialVectorStorage.Student student) {
+    public boolean exist(sequentialVector.Student student) {
         for (int i = 0; i < index; i++) {
             if (student.equals(students[i])) {
                 return true;

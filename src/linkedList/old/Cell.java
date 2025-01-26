@@ -1,4 +1,4 @@
-package linkedListStorage.old;
+package linkedList.old;
 
 public class Cell {
     private Object element;
