@@ -6,10 +6,18 @@ public class Node <T> {
     private Node<T> prev;
 
     public Node(T element) {
-        this(element, null, null);
+        if(element == null) {
+            throw new IllegalArgumentException("Node element cannot be null");
+        }
+        this.element = element;
+        this.next = null;
+        this.prev = null;
     }
 
     public Node (T element, Node<T> next, Node<T> prev) {
+        if(element == null) {
+            throw new IllegalArgumentException("Node element cannot be null");
+        }
         this.element = element;
         this.next = next;
         this.prev = prev;

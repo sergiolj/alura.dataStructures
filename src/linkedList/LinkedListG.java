@@ -23,7 +23,7 @@ public class LinkedListG <T> {
      *      - The tail pointer also update to point to this new node.
      * - Increments the count of nodes in the list.
      *
-     * @param element The element to be added as the first element from the list.
+     * @param element The element to be added as the first element of the list.
      */
     public void addAtBeginning(T element) {
         Node<T> newNode = new Node<>(element, head);
