@@ -22,23 +22,23 @@ public class Stack <T> {
      * Display the element from the top Cell.
      * @return
      */
-    public String top() {
+    public String getTop() {
         String next= this.top.getNext().toString();
-        return this.top.getElement().toString() + " -> "+ next;
+        return "Top " + this.top.getElement().toString() + " -> "+ next;
     }
 
     /**
      * Display the element from the bottom Cell.
      * @return
      */
-    public String bottom() {
+    public String getBottom() {
         String next="";
         if(this.bottom.getNext() != null) {
             next = this.bottom.getNext().toString();
         } else {
             next = "null";
         }
-        return this.bottom.getElement().toString() + " -> "+ next;
+        return "Bottom " + this.bottom.getElement().toString() + " -> "+ next;
     }
 
     /**

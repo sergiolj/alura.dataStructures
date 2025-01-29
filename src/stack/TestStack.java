@@ -17,8 +17,8 @@ public class TestStack {
         System.out.println(stack);
         System.out.println(stack.getSize());
 
-        System.out.println("Bottom " + stack.bottom());
-        System.out.println("Top " + stack.top());
+        System.out.println(stack.getBottom());
+        System.out.println(stack.getTop());
         System.out.println(stack.pop());
         System.out.println(stack);
         System.out.println(stack.peek());

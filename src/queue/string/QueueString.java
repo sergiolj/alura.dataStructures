@@ -1,23 +1,20 @@
-package queue;
-
-import util.OrdinalGenerator;
+package queue.string;
 
 import static util.OrdinalGenerator.getOrdinal;
 
-public class Queue <T> {
+public class QueueString {
     private int size = 0;
-    private Cell<T> first;
-    private Cell<T> last;
-    private T t;
+    private CellString first;
+    private CellString last;
 
-    public Queue() {}
+    public QueueString() {}
 
     public int getSize() {
         return size;
     }
 
-    public void enqueue(T value) {
-        Cell<T> newCell = new Cell<>(value);
+    public void enqueue(String value) {
+        CellString newCell = new CellString(value);
         if (last != null) {
             last.setNext(newCell);
         }
@@ -27,6 +24,21 @@ public class Queue <T> {
         }
         size++;
     }
+
+    public String enqueue() {
+        String value = getOrdinal(this.size+1);
+        CellString newCell = new CellString(value);
+        if (last != null) {
+            last.setNext(newCell);
+        }
+        this.last = newCell;
+        if (first == null) {
+            this.first = newCell;
+        }
+        size++;
+        return value;
+    }
+
     public boolean isEmpty() {
         return size == 0;
     }
@@ -41,9 +53,9 @@ public class Queue <T> {
         return "First " + first.getValue() + " --> " + first.getNext().getValue().toString();
     }
 
-    public T dequeue() {
+    public String dequeue() {
         if (!isEmpty()) {
-            T deleted = peek();
+            String deleted = peek();
             first = first.getNext();
             size--;
             return deleted;
@@ -53,13 +65,13 @@ public class Queue <T> {
         return null;
     }
 
-    private T peek() {
+    private String peek() {
         return first.getValue();
     }
 
     @Override
     public String toString() {
-        Cell<T> current = first;
+        CellString current = first;
         StringBuilder sb = new StringBuilder("Queue{");
         while (current != null) {
             sb.append(current.getValue());
@@ -70,3 +82,4 @@ public class Queue <T> {
         return sb.toString();
     }
 }
+

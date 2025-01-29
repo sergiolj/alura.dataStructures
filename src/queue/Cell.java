@@ -4,9 +4,9 @@ public class Cell <T>{
     private T value;
     private Cell<T> next;
 
-    public Cell(T value, Cell<T> next) {
+    public Cell(T value) {
         this.value = value;
-        this.next = next;
+        this.next = null;
     }
 
     public T getValue() {
